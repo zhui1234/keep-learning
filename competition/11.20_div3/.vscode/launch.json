@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C/C++ Debug",
+            "type": "cppdbg",//调试器类型
+            "request": "launch",//启动配置
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",//可执行文件路径
+            "args": [],//传递给程序的参数
+            "stopAtEntry": true,//是否在程序入口处暂停
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,//是否使用外部控制台
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\Program Files\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [//调试器启动时执行的命令
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true//是否忽略失败
+                }
+            ],
+            "preLaunchTask": "g++_compile",//关联到tasks.json中的编译任务
+        }
+    ]
+}

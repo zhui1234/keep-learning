@@ -1,0 +1,19 @@
+{
+    "clang-format.executable": "D:/Program Files/LLVM-19.1.7-win64/bin/clang-format.exe",
+    // 重要：设置默认格式化器
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    // 可选：设置格式化风格
+    "clang-format.style": "file:/Users/Documents/codes/.clang-format", // 使用项目中的.clang-format文件
+    // "clang-format.fallbackStyle": "LLVM",  // 如果没有.clang-format文件时的备用风格
+    // 可选：启用保存时格式化
+    "editor.formatOnSave": true,
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp"
+    }
+}
