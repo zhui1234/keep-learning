@@ -1,0 +1,19 @@
+# 代码风格为:
+# if(a > 1){
+#     ;
+# }
+# class A{
+# private:
+# };
+BasedOnStyle: Google
+Language:     Cpp
+
+AlignTrailingComments:	# 尾部注释的控制
+    Kind: Always			# 对齐尾部注释
+    OverEmptyLines: 0		# 应用对齐的空行数为0，只要存在空行就不再对齐尾部注释
+SpacesBeforeTrailingComments: 2 # 单行注释前添加两个空格
+AlignAfterOpenBracket: BlockIndent # 括号内容缩进
+IndentWidth: 4                  # 缩进为4个字符
+AccessModifierOffset: -4        # private,public等向前四格
+
+SortIncludes: Never		# 不排序头文件

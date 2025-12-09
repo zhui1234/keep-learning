@@ -1,0 +1,15 @@
+{
+    "clang-format.executable": "D:/Program Files/LLVM-19.1.7-win64/bin/clang-format.exe",
+    // 重要：设置默认格式化器
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "editor.formatOnSave": true,
+    "files.associations": {
+        "iostream": "cpp",
+        "stdexcept": "cpp"
+    }
+}
