@@ -1,0 +1,85 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild", //任务类型
+            "label": "g++_compile", //任务名称
+            "command": "C:\\Program Files\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-Wall",
+                "-Wextra",
+                "-Werror",
+                "-fdiagnostics-color=always", //启用彩色诊断信息
+                "-g", //生成调试信息
+                "-std=c++17", //使用C++17标准
+                "-Wall", //警告信息
+                "-Wextra", //额外警告信息
+                "-o", // 指定输出文件
+                "${fileDirname}\\${fileBasenameNoExtension}.exe", //输出文件路径
+                "${file}", //当前编辑的文件
+                "${fileDirname}\\bigint.cpp"
+            ],
+            "options": { //编译选项
+                "cwd": "${fileDirname}"
+            },
+            "group": {
+                "kind": "build", //构建任务
+                "isDefault": true //设置为默认构建任务
+            },
+            "presentation": {
+                "echo": true, // 显示执行的命令
+                "reveal": "always", // 控制显示终端面板时机
+                "focus": false, // 是否切换焦点
+                "panel": "dedicated", // 设置终端面板使用方式(new/shared)
+                "showReuseMessage": false, // 显示终端重用
+                "clear": false // 运行前是否清空终端
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "编译并生成可调试的可执行文件" //任务详情
+        },
+        {
+            "type": "shell",
+            "label": "g++_compile_and_run",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "start",
+                "${fileBasenameNoExtension} & pause",
+                "cmd",
+                "/c",
+                "chcp 65001 >nul && \"${fileDirname}\\${fileBasenameNoExtension}.exe\" && echo. & pause"
+            ],
+            "dependsOn": "g++_compile"
+        }, /*
+        {
+            "type": "cppbuild",
+            "label": "g++_compile_and_run",
+            "command": "C:\\Program Files\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-std=c++17",
+                "-Wall",
+                "-Wextra",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "${file}",
+                "&&",
+                "cmd", "/c", "echo 编译成功，正在运行程序... && \"${fileDirname}/${fileBasenameNoExtension}.exe\" && echo. && echo 程序执行完毕，按任意键继续... && pause >nul"
+            ],
+            "group": "none",
+            "problemMatcher": ["$gcc"],
+            "detail": "编译并运行程序",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": false,
+                "clear": false
+            }
+        }*/
+    ]
+}
